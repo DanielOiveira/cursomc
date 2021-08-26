@@ -15,6 +15,7 @@ import org.thymeleaf.context.Context;
 
 import com.danieloliveira.cursomc.domain.Pedido;
 
+
 public abstract class AbstractEmailService implements EmailService {
 
 	@Value("${default.sender}")
@@ -42,6 +43,7 @@ public abstract class AbstractEmailService implements EmailService {
 		}
 	};
 
+	
 	protected MimeMessage prepareMimeMessageFromPedido(Pedido obj) throws MessagingException {
 		MimeMessage mimeMessage = javaMailSender.createMimeMessage();
 		MimeMessageHelper mmh = new MimeMessageHelper(mimeMessage, true);
